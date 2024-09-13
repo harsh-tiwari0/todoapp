@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            background: #1E1E1E;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            width: 350px;
+            background: #2C2F33;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .login-key {
+            font-size: 70px;
+            color: #00C1D4;
+            margin-bottom: 20px;
+        }
+
+        .login-title {
+            font-size: 28px;
+            color: #ffffff;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+
+        .login-form {
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #40444B;
+            color: #ffffff;
+            border-bottom: 2px solid #00C1D4;
+            border-radius: 5px;
+            outline: none;
+            font-weight: bold;
+        }
+
+        input:focus {
+            border-bottom: 2px solid #00A3A4;
+        }
+
+        .form-control-label {
+            font-size: 12px;
+            color: #808080;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .btn-outline-primary {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #00C1D4;
+            color: #00C1D4;
+            background-color: transparent;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline-primary:hover {
+            background-color: #00C1D4;
+            color: #ffffff;
+        }
+
+        .login-button {
+            margin-top: 20px;
+        }
+
+        .already-user {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .already-user a {
+            color: #00C1D4;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .already-user a:hover {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="login-box">
+        <div class="login-key">
+            <i class="fa fa-user-plus"></i>
+        </div>
+        <div class="login-title">
+            REGISTER
+        </div>
+        <div class="login-form">
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="form-control-label">USERNAME</label>
+                    <input type="text" name="fnm" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label">EMAIL</label>
+                    <input type="email" name="emailid" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label">PASSWORD</label>
+                    <input type="password" name="pwd" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label">CONFIRM PASSWORD</label>
+                    <input type="password" name="confirm_pwd" class="form-control" required>
+                </div>
+                <div class="login-button">
+                    <button type="submit" class="btn btn-outline-primary">REGISTER</button>
+                </div>
+                <div class="already-user">
+                    Already a user? <a href="/login/">Sign In</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
